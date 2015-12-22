@@ -1,1 +1,48 @@
-React parallax component
+# React Parallax Component
+
+Easiest way to add scroll parallax effect on the component.
+
+
+## Installation
+
+`npm install react-parallax-component`
+
+## Usage
+
+`import ParallaxComponent from 'react-parallax-componen';`
+
+
+```javascript
+<ParallaxComponent speed="0.003"
+                   width="300"
+                   top="40%"
+                   left="100">
+  <div>
+    Children component
+  </div>
+</ParallaxComponent>
+```
+
+### Props
+- `speed` _(String)_ - animation speed, default: `-0.03`
+- `width` _(String)_ - component width, default: `auto`
+- `height` _(String)_ - component height, default: `auto`
+- `top` _(String)_ - component top position, default: `0`
+- `left` _(String)_ - component left position, default: `0`
+
+
+## Installation
+```
+$ npm install
+```
+
+## Run app
+```
+$ npm start
+```
+And open in browser: [http://localhost:3000](http://localhost:3000)
+
+## Build
+```
+$ npm run build
+```
