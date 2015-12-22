@@ -1,2 +1,2 @@
-var ParallaxComponent = require('./dist/ParallaxComponent.min.js');
+var ParallaxComponent = require('./dist/index.min.js');
 module.exports = ParallaxComponent;

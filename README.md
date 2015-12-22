@@ -11,7 +11,7 @@ Easiest way to add scroll parallax effect on the component.
 
 ## Usage
 
-`import ParallaxComponent from 'react-parallax-componen';`
+`import ParallaxComponent from 'react-parallax-component';`
 
 
 ```javascript

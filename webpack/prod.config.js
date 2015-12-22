@@ -11,11 +11,11 @@ module.exports = {
   ],
 
   output: {
-    filename: 'ParallaxComponent.min.js',
-    path: path.join(__dirname, '../dist/'),
-    publicPath: 'dist/',
+    library: 'react-parallax-component',
+    libraryTarget: 'umd',
+    filename: '../dist/index.js',
+    path: __dirname,
   },
-
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
@@ -30,9 +30,6 @@ module.exports = {
       compress: {
         warnings: false,
       },
-    }),
-    new webpack.ProvidePlugin({
-      jQuery: 'jquery',
     }),
   ],
 
