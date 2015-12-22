@@ -19,15 +19,12 @@ module.exports = {
 
   plugins: [
     new webpack.DefinePlugin({
-      __DEVELOPMENT__: true
+      __DEVELOPMENT__: true,
     }),
     new ExtractTextPlugin('bundle.css'),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
-    new webpack.ProvidePlugin({
-      jQuery: 'jquery',
-    }),
   ],
 
   resolve: {
