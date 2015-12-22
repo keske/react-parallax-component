@@ -2,6 +2,8 @@
 
 Easiest way to add scroll parallax effect on the component.
 
+[https://raw.githubusercontent.com/keske/react-parallax-component/master/src/example/images/example.gif?token=ABvV0pJZwvFAa0Nrvv6LRVqxkGZb8vhcks5Wgt1WwA%3D%3D](https://raw.githubusercontent.com/keske/react-parallax-component/master/src/example/images/example.gif?token=ABvV0pJZwvFAa0Nrvv6LRVqxkGZb8vhcks5Wgt1WwA%3D%3D)
+
 
 ## Installation
 
