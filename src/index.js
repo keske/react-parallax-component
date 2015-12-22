@@ -47,8 +47,6 @@ export default class ParallaxComponent extends Component {
 
     const top = this.getTop();
 
-    // console.log(speed);
-
     // Top positons
     const pageTop = window.pageYOffset;
     const elemTop = this.refs.parallaxElement.offsetTop;
