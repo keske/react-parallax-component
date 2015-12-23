@@ -1,44 +1,6 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
+import ReactSoundcloud from '../dist/ReactSoundcloud.min.js';
 
-// Lib
-import ParallaxComponent from '../';
-
-// Component styles
-import styles from './styles';
-
-const WORD = 'AWESOME REACT';
-
-export default class ExamplePage extends Component {
-  render() {
-
-    const wrap = {
-      height: window.innerHeight * 10,
-    };
-
-    return (
-      <div className={`${styles}`}
-           style={wrap}>
-
-      {
-        WORD.split('').map((letter, index) =>
-          <ParallaxComponent speed={`${Math.floor(Math.random() * (2 - 0) + 0) === 1 ? '-' : ''}${Math.random() * (0.1 - 0) + 0}`}
-                             top="40%"
-                             left={`${(index + 1) * 80}`}
-                             key={index}>
-            <span className="letter">
-              {letter}
-            </span>
-          </ParallaxComponent>
-        )
-      }
-
-      </div>
-    );
-  }
-}
-
-ReactDOM.render(
-  <ExamplePage />,
-  document.getElementById('react-parallax-component-example')
-);
+React.render(<ReactSoundcloud url="https://soundcloud.com/icebound/dusty-breaks-at-the-bottom-of-the-random-crates"/>, document.getElementById('example-1'));
+React.render(<ReactSoundcloud url="https://soundcloud.com/cashykesh/cashy-here-i-go-produced-by-purp-dogg-snippet" />, document.getElementById('example-2'));
+React.render(<ReactSoundcloud visual={ false } color="0033FF" />, document.getElementById('example-3'));

@@ -49,11 +49,11 @@ export default class ParallaxComponent extends Component {
 
     // Top positons
     const pageTop = window.pageYOffset;
-    const elemTop = this.refs.parallaxElement.offsetTop;
+    const elemTop = this._parallaxElement.offsetTop;
     const newTop = (((pageTop - elemTop) * (+speed * -1)) + top).toFixed(0);
 
     // Set new top position
-    this.refs.parallaxElement.style.top = `${newTop}px`;
+    this._parallaxElement.style.top = `${newTop}px`;
   }
 
   render() {
@@ -66,14 +66,16 @@ export default class ParallaxComponent extends Component {
 
     return (
       <div className={`${styles}`}
+           ref={(c) => this._parallaxElement = c}
            style={{
              width,
              height,
              top,
              left,
-           }}
-           ref="parallaxElement">
-        {this.props.children}
+           }}>
+        <div>
+          {this.props.children}
+        </div>
       </div>
     );
   }
