@@ -13,7 +13,7 @@ module.exports = {
   output: {
     library: 'react-parallax-component',
     libraryTarget: 'umd',
-    filename: '../dist/index.js',
+    filename: '../dist/index.min.js',
     path: __dirname,
   },
   plugins: [
