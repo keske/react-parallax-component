@@ -1,0 +1,14 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,400italic,300italic&subset=latin,cyrillic-ext);
+
+:local(.styles) {
+  position: relative;
+
+  span.letter {
+    font-size: 60px;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    width: 80px;
+    display: inline-block;
+  }
+}
