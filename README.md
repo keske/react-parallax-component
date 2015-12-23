@@ -33,7 +33,7 @@ Easiest way to add scroll parallax effect on the component.
 - `left` _(String)_ - component left position, default: `0`
 
 
-## Installation
+## Development
 ```
 $ npm install
 ```
