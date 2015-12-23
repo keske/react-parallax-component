@@ -42,7 +42,7 @@ $ npm install
 ```
 $ npm start
 ```
-And open in browser: [http://localhost:3000](http://localhost:3000)
+And open in browser: [http://localhost:4000](http://localhost:4000)
 
 ## Build
 ```

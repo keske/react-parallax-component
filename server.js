@@ -26,7 +26,7 @@ app.get('/', function root(req, res) {
 
 if (require.main === module) {
   var server = http.createServer(app);
-  server.listen(process.env.PORT || 3000, function onListen() {
+  server.listen(process.env.PORT || 4000, function onListen() {
     var address = server.address();
     console.log('Listening on: %j', address);
     console.log(' -> that probably means: http://localhost:%d', address.port);

@@ -40,5 +40,5 @@ export default class ExamplePage extends Component {
 
 ReactDOM.render(
   <ExamplePage />,
-  document.getElementById('root')
+  document.getElementById('react-parallax-component-example')
 );
