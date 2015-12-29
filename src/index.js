@@ -18,6 +18,14 @@ export default class ParallaxComponent extends Component {
     left: React.PropTypes.string,
   }
 
+  static defaultProps = {
+    width: 'auto',
+    height: 'auto',
+    top: '0',
+    left: '0',
+    speed: DEFAULT_SPEED,
+  }
+
   constructor(props) {
     super(props);
 
@@ -41,9 +49,7 @@ export default class ParallaxComponent extends Component {
   }
 
   handleScroll() {
-    const {
-      speed = DEFAULT_SPEED,
-    } = this.props;
+    const { speed } = this.props;
 
     const top = this.getTop();
 
@@ -57,22 +63,10 @@ export default class ParallaxComponent extends Component {
   }
 
   render() {
-    const {
-      width = 'auto',
-      height = 'auto',
-      top = '0',
-      left = '0',
-    } = this.props;
-
     return (
-      <div className={`${styles}`}
-           ref={(c) => this._parallaxElement = c}
-           style={{
-             width,
-             height,
-             top,
-             left,
-           }}>
+      <div className={styles}
+           ref={c => this._parallaxElement = c}
+           style={{...this.props}}>
         <div>
           {this.props.children}
         </div>

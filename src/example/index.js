@@ -17,14 +17,14 @@ export default class ExamplePage extends Component {
     };
 
     return (
-      <div className={`${styles}`}
+      <div className={styles}
            style={wrap}>
 
       {
         WORD.split('').map((letter, index) =>
-          <ParallaxComponent speed={`${Math.floor(Math.random() * (2 - 0) + 0) === 1 ? '-' : ''}${Math.random() * (0.1 - 0) + 0}`}
+          <ParallaxComponent speed={Math.floor(Math.random() * (2 - 0) + 0) === 1 ? '-' : '' + Math.random() * (0.1 - 0) + 0}
                              top="40%"
-                             left={`${(index + 1) * 80}`}
+                             left={(index + 1) * 80}
                              key={index}>
             <span className="letter">
               {letter}
