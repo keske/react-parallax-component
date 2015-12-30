@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 // Component styles
 import styles from './styles';
 
-const DEFAULT_SPEED = '-0.03';
-
 export default class ParallaxComponent extends Component {
 
   static propTypes = {
@@ -23,7 +21,7 @@ export default class ParallaxComponent extends Component {
     height: 'auto',
     top: '0',
     left: '0',
-    speed: DEFAULT_SPEED,
+    speed: '-0.03',
   }
 
   constructor(props) {
@@ -65,7 +63,7 @@ export default class ParallaxComponent extends Component {
   render() {
     return (
       <div className={styles}
-           ref={c => this._parallaxElement = c}
+           ref={() => this._parallaxElement}
            style={{...this.props}}>
         <div>
           {this.props.children}
