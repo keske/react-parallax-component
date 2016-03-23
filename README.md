@@ -32,7 +32,6 @@ Easiest way to add scroll parallax effect on the component.
 - `top` _(String)_ - component top position, default: `inherit`
 - `left` _(String)_ - component left position, default: `inherit`
 - `right` _(String)_ - component top position, default: `inherit`
-- `bottom` _(String)_ - component left position, default: `inherit`
 
 ## Development
 ```

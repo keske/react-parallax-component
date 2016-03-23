@@ -15,7 +15,6 @@ export default class ParallaxComponent extends Component {
     top: React.PropTypes.string,
     left: React.PropTypes.number,
     right: React.PropTypes.string,
-    bottom: React.PropTypes.string,
   }
 
   static defaultProps = {
@@ -24,7 +23,6 @@ export default class ParallaxComponent extends Component {
     top: 'inherit',
     left: 'inherit',
     right: 'inherit',
-    bottom: 'inherit',
     speed: '-0.03',
   }
 

@@ -1,6 +1,6 @@
 {
   "name": "react-parallax-component",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Easiest way to add scroll parallax effect on the component",
   "scripts": {
     "start": "node server.js",
