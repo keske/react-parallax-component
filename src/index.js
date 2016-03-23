@@ -13,14 +13,18 @@ export default class ParallaxComponent extends Component {
     width: React.PropTypes.string,
     height: React.PropTypes.string,
     top: React.PropTypes.string,
-    left: React.PropTypes.string,
+    left: React.PropTypes.number,
+    right: React.PropTypes.string,
+    bottom: React.PropTypes.string,
   }
 
   static defaultProps = {
     width: 'auto',
     height: 'auto',
-    top: '0',
-    left: '0',
+    top: 'inherit',
+    left: 'inherit',
+    right: 'inherit',
+    bottom: 'inherit',
     speed: '-0.03',
   }
 
@@ -53,17 +57,17 @@ export default class ParallaxComponent extends Component {
 
     // Top positons
     const pageTop = window.pageYOffset;
-    const elemTop = this._parallaxElement.offsetTop;
+    const elemTop = this.refs.parallaxElement.offsetTop;
     const newTop = (((pageTop - elemTop) * (+speed * -1)) + top).toFixed(0);
 
     // Set new top position
-    this._parallaxElement.style.top = `${newTop}px`;
+    this.refs.parallaxElement.style.top = `${newTop}px`;
   }
 
   render() {
     return (
       <div className={styles}
-           ref={() => this._parallaxElement}
+           ref="parallaxElement"
            style={{...this.props}}>
         <div>
           {this.props.children}

@@ -29,9 +29,10 @@ Easiest way to add scroll parallax effect on the component.
 - `speed` _(String)_ - animation speed, default: `-0.03`
 - `width` _(String)_ - component width, default: `auto`
 - `height` _(String)_ - component height, default: `auto`
-- `top` _(String)_ - component top position, default: `0`
-- `left` _(String)_ - component left position, default: `0`
-
+- `top` _(String)_ - component top position, default: `inherit`
+- `left` _(String)_ - component left position, default: `inherit`
+- `right` _(String)_ - component top position, default: `inherit`
+- `bottom` _(String)_ - component left position, default: `inherit`
 
 ## Development
 ```
