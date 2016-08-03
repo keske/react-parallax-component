@@ -55,8 +55,7 @@ export default class ParallaxComponent extends Component {
 
     // Top positons
     const pageTop = window.pageYOffset;
-    const elemTop = this.refs.parallaxElement.offsetTop;
-    const newTop = (((pageTop - elemTop) * (+speed * -1)) + top).toFixed(0);
+    const newTop = (top - (pageTop * speed)).toFixed(0);
 
     // Set new top position
     this.refs.parallaxElement.style.top = `${newTop}px`;
