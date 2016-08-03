@@ -45,7 +45,7 @@ export default class ParallaxComponent extends Component {
 
     return top.indexOf('%') > -1
       ? window.innerHeight * (top.replace('%', '') / 100)
-      : +top;
+      : parseInt(top, 10);
   }
 
   handleScroll() {
