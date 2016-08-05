@@ -8,6 +8,7 @@ import ParallaxComponent from '../';
 import styles from './styles';
 
 const WORD = 'AWESOME REACT';
+const random = (min, max) => Math.random() * (max - min) + min;
 
 export default class ExamplePage extends Component {
   render() {
@@ -22,7 +23,7 @@ export default class ExamplePage extends Component {
 
       {
         WORD.split('').map((letter, index) =>
-          <ParallaxComponent speed={Math.floor(Math.random() * (2 - 0) + 0) === 1 ? 0 : Math.random() * (0.1 - 0) + 0}
+          <ParallaxComponent speed={random(0, 0.1) * ((random(0, 2) > 1) ? 1 : -1)}
                              top="40%"
                              left={(index + 1) * 80}
                              key={index}>
