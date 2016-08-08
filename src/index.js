@@ -7,7 +7,7 @@ export default class ParallaxComponent extends Component {
 
   static propTypes = {
     children: React.PropTypes.object,
-    speed: React.PropTypes.string,
+    speed: React.PropTypes.number,
 
     // Style
     width: React.PropTypes.string,
@@ -23,7 +23,7 @@ export default class ParallaxComponent extends Component {
     top: 'inherit',
     left: 'inherit',
     right: 'inherit',
-    speed: '-0.03',
+    speed: -0.03,
   }
 
   constructor(props) {
@@ -45,7 +45,7 @@ export default class ParallaxComponent extends Component {
 
     return top.indexOf('%') > -1
       ? window.innerHeight * (top.replace('%', '') / 100)
-      : +top;
+      : parseInt(top, 10);
   }
 
   handleScroll() {
@@ -55,8 +55,7 @@ export default class ParallaxComponent extends Component {
 
     // Top positons
     const pageTop = window.pageYOffset;
-    const elemTop = this.refs.parallaxElement.offsetTop;
-    const newTop = (((pageTop - elemTop) * (+speed * -1)) + top).toFixed(0);
+    const newTop = (top - (pageTop * speed));
 
     // Set new top position
     this.refs.parallaxElement.style.top = `${newTop}px`;
