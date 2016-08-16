@@ -63,9 +63,11 @@ export default class ParallaxComponent extends Component {
 
   render() {
     return (
-      <div className={styles}
-           ref="parallaxElement"
-           style={{...this.props}}>
+      <div
+        className={styles}
+        ref="parallaxElement"
+        style={{...this.props}}
+      >
         <div>
           {this.props.children}
         </div>

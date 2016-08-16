@@ -18,22 +18,24 @@ export default class ExamplePage extends Component {
     };
 
     return (
-      <div className={styles}
-           style={wrap}>
-
-      {
-        WORD.split('').map((letter, index) =>
-          <ParallaxComponent speed={random(0, 0.1) * ((random(0, 2) > 1) ? 1 : -1)}
-                             top="40%"
-                             left={(index + 1) * 80}
-                             key={index}>
-            <span className="letter">
-              {letter}
-            </span>
-          </ParallaxComponent>
-        )
-      }
-
+      <div
+        className={styles}
+        style={wrap}
+      >
+        {
+          WORD.split('').map((letter, index) =>
+            <ParallaxComponent
+              speed={random(0, 0.1) * ((random(0, 2) > 1) ? 1 : -1)}
+              top="40%"
+              left={(index + 1) * 80}
+              key={index}
+            >
+              <span className="letter">
+                {letter}
+              </span>
+            </ParallaxComponent>
+          )
+        }
       </div>
     );
   }
