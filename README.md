@@ -15,10 +15,12 @@ Easiest way to add scroll parallax effect on the component.
 
 
 ```javascript
-<ParallaxComponent speed="0.003"
-                   width="300"
-                   top="40%"
-                   left="100">
+<ParallaxComponent
+  speed="0.003"
+  width="300"
+  top="40%"
+  left="100"
+>
   <div>
     Children component
   </div>
