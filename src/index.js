@@ -30,7 +30,7 @@ export default class ParallaxComponent extends Component {
   constructor(props) {
     super(props);
 
-    this.handleScroll = this.handleScroll.bind(this);
+    this.handleScroll = throttle(this.handleScroll.bind(this), 10);
   }
 
   componentDidMount() {
@@ -49,7 +49,7 @@ export default class ParallaxComponent extends Component {
       : parseInt(top, 10);
   }
 
-  handleScroll = throttle(() => {
+  handleScroll() {
     const { speed } = this.props;
 
     const top = this.getTop();
@@ -60,7 +60,7 @@ export default class ParallaxComponent extends Component {
 
     // Set new top position
     this.refs.parallaxElement.style.top = `${newTop}px`;
-  }, 10);
+  }
 
   render() {
     return (
