@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import throttle from 'lodash.throttle';
 
 // Component styles
 import styles from './styles';
@@ -48,7 +49,7 @@ export default class ParallaxComponent extends Component {
       : parseInt(top, 10);
   }
 
-  handleScroll() {
+  handleScroll = throttle(() => {
     const { speed } = this.props;
 
     const top = this.getTop();
@@ -59,7 +60,7 @@ export default class ParallaxComponent extends Component {
 
     // Set new top position
     this.refs.parallaxElement.style.top = `${newTop}px`;
-  }
+  }, 10);
 
   render() {
     return (
