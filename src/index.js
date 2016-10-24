@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import throttle from 'lodash.throttle';
 
 // Component styles
 import styles from './styles';
@@ -29,7 +30,7 @@ export default class ParallaxComponent extends Component {
   constructor(props) {
     super(props);
 
-    this.handleScroll = this.handleScroll.bind(this);
+    this.handleScroll = throttle(this.handleScroll.bind(this), 10);
   }
 
   componentDidMount() {
