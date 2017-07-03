@@ -13,11 +13,26 @@ export default class ParallaxComponent extends Component {
     // Style
     style: React.PropTypes.object,
     className: React.PropTypes.string,
-    width: React.PropTypes.string,
-    height: React.PropTypes.string,
-    top: React.PropTypes.string,
-    left: React.PropTypes.number,
-    right: React.PropTypes.string,
+    width: React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.number,
+    ]),
+    height: React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.number,
+    ]),
+    top: React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.number,
+    ]),
+    left: React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.number,
+    ]),
+    right: React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.number,
+    ]),
   }
 
   static defaultProps = {
@@ -46,9 +61,10 @@ export default class ParallaxComponent extends Component {
 
   getTop() {
     const { top = 0 } = this.props;
+    const topString = top + '';
 
-    return top.indexOf('%') > -1
-      ? window.innerHeight * (top.replace('%', '') / 100)
+    return topString.indexOf('%') > -1
+      ? window.innerHeight * (topString.replace('%', '') / 100)
       : parseInt(top, 10);
   }
 
