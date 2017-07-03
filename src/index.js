@@ -7,7 +7,7 @@ import styles from './styles';
 export default class ParallaxComponent extends Component {
 
   static propTypes = {
-    children: React.PropTypes.object,
+    children: React.PropTypes.node.isRequired,
     speed: React.PropTypes.number,
 
     // Style
