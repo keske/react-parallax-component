@@ -35,6 +35,7 @@ export default class ParallaxComponent extends Component {
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
+    this.handleScroll();
   }
 
   componentWillUnmount() {
