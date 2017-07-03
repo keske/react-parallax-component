@@ -11,6 +11,8 @@ export default class ParallaxComponent extends Component {
     speed: React.PropTypes.number,
 
     // Style
+    style: React.PropTypes.object,
+    className: React.PropTypes.string,
     width: React.PropTypes.string,
     height: React.PropTypes.string,
     top: React.PropTypes.string,
@@ -64,15 +66,21 @@ export default class ParallaxComponent extends Component {
   }
 
   render() {
+    const { width, height, left, right, top, speed, style, children, className, ...rest } = this.props;
+    const ownStyle = {
+      width,
+      height,
+      left,
+      right,
+    };
     return (
       <div
-        className={styles}
+        className={`${styles} ${className}`}
         ref="parallaxElement"
-        style={{...this.props}}
+        style={{ ...style, ...ownStyle }}
+        {...rest}
       >
-        <div>
-          {this.props.children}
-        </div>
+          {children}
       </div>
     );
   }
