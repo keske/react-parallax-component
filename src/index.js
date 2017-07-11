@@ -7,15 +7,32 @@ import styles from './styles';
 export default class ParallaxComponent extends Component {
 
   static propTypes = {
-    children: React.PropTypes.object,
+    children: React.PropTypes.node.isRequired,
     speed: React.PropTypes.number,
 
     // Style
-    width: React.PropTypes.string,
-    height: React.PropTypes.string,
-    top: React.PropTypes.string,
-    left: React.PropTypes.number,
-    right: React.PropTypes.string,
+    style: React.PropTypes.object,
+    className: React.PropTypes.string,
+    width: React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.number,
+    ]),
+    height: React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.number,
+    ]),
+    top: React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.number,
+    ]),
+    left: React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.number,
+    ]),
+    right: React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.number,
+    ]),
   }
 
   static defaultProps = {
@@ -31,10 +48,12 @@ export default class ParallaxComponent extends Component {
     super(props);
 
     this.handleScroll = throttle(this.handleScroll.bind(this), 10);
+    this.parallaxElement;
   }
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
+    this.handleScroll();
   }
 
   componentWillUnmount() {
@@ -43,9 +62,10 @@ export default class ParallaxComponent extends Component {
 
   getTop() {
     const { top = 0 } = this.props;
+    const topString = top + '';
 
-    return top.indexOf('%') > -1
-      ? window.innerHeight * (top.replace('%', '') / 100)
+    return topString.indexOf('%') > -1
+      ? window.innerHeight * (topString.replace('%', '') / 100)
       : parseInt(top, 10);
   }
 
@@ -59,19 +79,25 @@ export default class ParallaxComponent extends Component {
     const newTop = (top - (pageTop * speed));
 
     // Set new top position
-    this.refs.parallaxElement.style.top = `${newTop}px`;
+    this.parallaxElement.style.top = `${newTop}px`;
   }
 
   render() {
+    const { width, height, left, right, top, speed, style, children, className, ...rest } = this.props;
+    const ownStyle = {
+      width,
+      height,
+      left,
+      right,
+    };
     return (
       <div
-        className={styles}
-        ref="parallaxElement"
-        style={{...this.props}}
+        className={`${styles} ${className}`}
+        ref={ref => this.parallaxElement = ref}
+        style={{ ...style, ...ownStyle }}
+        {...rest}
       >
-        <div>
-          {this.props.children}
-        </div>
+          {children}
       </div>
     );
   }
